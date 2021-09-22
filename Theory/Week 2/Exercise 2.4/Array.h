@@ -21,4 +21,6 @@ public:
 	int findElement(int toFind);
 
 	void sortArray(bool (*cmp)(int, int));
+
+	void freeArray();
 };

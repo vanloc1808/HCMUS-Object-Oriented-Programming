@@ -23,6 +23,8 @@ void getSizeProcess() {
 	int size = arr.getSize();
 
 	cout << "The array size is: " << size << "\n";
+
+	arr.freeArray();
 }
 
 void getElementProcess() {
@@ -46,6 +48,8 @@ void getElementProcess() {
 
 		cout << "The element at postion " << idx << " is " << res << '\n';
 	}
+	
+	arr.freeArray();
 }
 
 void newValueProcess() {
@@ -76,6 +80,8 @@ void newValueProcess() {
 		arr.output();
 		cout << "\n";
 	}
+
+	arr.freeArray();
 }
 
 void findProcess() {
@@ -95,6 +101,8 @@ void findProcess() {
 	else {
 		cout << "The number " << toFind << " is found at position " << res << "\n";
 	}
+
+	arr.freeArray();
 }
 
 //The following two functions is used as parameter while sorting the array.
@@ -117,6 +125,8 @@ void sortAsc() {
 	cout << "After sorting: \n";
 	arr.output();
 	cout << "\n";
+
+	arr.freeArray();
 }
 
 void sortDes() {
@@ -130,4 +140,6 @@ void sortDes() {
 	cout << "After sorting: \n";
 	arr.output();
 	cout << "\n";
+
+	arr.freeArray();
 }

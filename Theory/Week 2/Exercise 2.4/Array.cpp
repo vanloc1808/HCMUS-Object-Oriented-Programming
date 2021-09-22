@@ -99,3 +99,8 @@ void Array::sortArray(bool (*cmp)(int, int)) {
 		}
 	}
 }
+
+void Array::freeArray() {
+	delete[] this->arr;
+	this->arr = nullptr;
+}
