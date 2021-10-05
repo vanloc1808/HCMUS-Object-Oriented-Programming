@@ -25,6 +25,7 @@ public:
 			givenSize = 0;
 		}
 
+		delete[] this->arr;
 		this->size = givenSize;
 
 		//allocate the dynamic array.
@@ -44,7 +45,7 @@ public:
 		}
 
 		this->size = givenSize;
-		
+		delete[] this->arr;
 		//allocate the dynamic array.
 		this->arr = new T[this->size];
 
@@ -61,6 +62,7 @@ public:
 			this->size = givenArr.size;
 		}
 
+		delete[] this->arr;
 		//allocate the dynamic array.
 		this->arr = new T[this->size];
 

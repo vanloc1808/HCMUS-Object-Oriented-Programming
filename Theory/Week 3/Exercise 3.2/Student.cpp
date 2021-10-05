@@ -7,6 +7,7 @@
 //fully-parameterized constructor with full name, Literature point and Mathematics point.
 Student::Student(const char* name, float lit, float mat) {
 	//set the full name.
+	delete[] this-> m_fullName;
 	int len = strlen(name);
 	this->m_fullName = new char[len + 1];
 	strcpy(this->m_fullName, name);
