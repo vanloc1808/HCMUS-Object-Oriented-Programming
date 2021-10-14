@@ -37,7 +37,7 @@ public:
 
     void simplify(); //simplify this polynomial
 
-    double countValue(); //count value of polynomial at a certain point
+    double countValue(double x); //count value of polynomial at a certain point
 
     Polynomial& derivative(); //get the derivative of this polynomial
 
@@ -49,13 +49,13 @@ public:
 
     //ARITHMETIC OPERATORS//
 
-    Polynomial& operator+(const Polynomial& p); //addition operator
+    Polynomial operator+(const Polynomial& p); //addition operator
 
-    Polynomial& operator-(const Polynomia& p); //substraction operator
+    Polynomial& operator-(const Polynomial& p); //substraction operator
 
     Polynomial& operator*(const Polynomial& p); //multiplication operator
 
-    Polynomial& operator-(const Polynomial& p); //division operator
+    Polynomial& operator/(const Polynomial& p); //division operator
 
     Polynomial& operator=(const Polynomial& p); //assigning operator
 
@@ -75,14 +75,14 @@ public:
 
     //CALCULUS OPERATORS//
 
-    Polynomial& operator!(const Polynomial& p); //derivative operator
+    Polynomial& operator!(); //derivative operator
 
-    Polynomial& operator~(const Polynomial& p); //integral operator
+    Polynomial& operator~(); //integral operator
 
     //INPUT AND OUTPUT OPERATORS//
-    friend operator>>(std::istream inDev, Polynomial& p); //input operator
+    friend std::istream& operator>>(std::istream inDev, Polynomial& p); //input operator
 
-    friend operator<<(std::ostream outDev, Polynomial& p); //output operator
+    friend std::ostream& operator<<(std::ostream outDev, Polynomial& p); //output operator
 };
 
 #endif

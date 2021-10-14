@@ -79,10 +79,7 @@ public:
         return this->m_arr[pos];
     }
 
-    //The following two operators used to cast into another data types,
-	//I googled and found that they said we have to used the keyword "explicit" for this type of operators.
-	//Source: https://daynhauhoc.com/t/chuyen-kieu-cua-doi-tuong-nap-chong-toan-tu-ten-class-trong-c/34605/2
-    explicit operator T*() const {
+    operator T*() const {
            T* res = nullptr;
 
            if (this->m_size == 0) {
