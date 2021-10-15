@@ -47,7 +47,7 @@ Polynomial::Polynomial(const Polynomial& p) {
     this->m_degree = p.m_degree;
 
     //delete the old coefficients
-    delete[] this->m_coefficients;
+    //delete[] this->m_coefficients;
 
     //allocate the memory
     this->m_coefficients = new double[this->m_degree + 1];
@@ -126,7 +126,7 @@ bool Polynomial::compare(const Polynomial& p) {
 //simplify if the most significant coefficient == 0
 void Polynomial::simplify() {
     int degree = this->m_degree;
-    double* curCoeff = new double[degree];
+    double* curCoeff = new double[degree + 1];
 
     for (int i = 0; i <= degree; i++) {
         curCoeff[i] = this->m_coefficients[i];
@@ -142,14 +142,14 @@ void Polynomial::simplify() {
     delete[]this->m_coefficients;
     this->m_coefficients = new double[degree + 1];
 
-    for (int i = idx; i <= this->m_degree; i++) {
+    for (int i = idx; i <= degree; i++) {
         this->m_coefficients[i - idx] = curCoeff[i];
     }
     
     this->m_degree = degree;
 
-    delete[]curCoeff;
-    curCoeff = nullptr;
+    //delete[]curCoeff;
+    //curCoeff = nullptr;
 }
 
 //count the value of this polynomial at a certain point
@@ -202,144 +202,4 @@ Polynomial& Polynomial::integral() {
     coeff = nullptr;
 
     return ans;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////OPERATORS/////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////
-
-//ARITHMETIC OPERATORS//
-
-Polynomial Polynomial::operator+(const Polynomial& p) {
-    int degree = std::max(this->m_degree, p.m_degree);
-    double* coeff = new double[degree + 1];
-
-    for (int i = 0; i <= degree; i++) {
-        double temp = 0;
-        if (degree - i <= this->m_degree) {
-            temp += this->m_coefficients[i];
-        }
-
-        if (degree - i <= p.m_degree) {
-            temp += p.m_coefficients[i];
-        }
-    }
-
-    Polynomial ans(degree, coeff);
-    ans.simplify();
-
-    delete[]coeff;
-    coeff = nullptr;
-
-    return ans;
-}
-
-Polynomial& Polynomial::operator-(const Polynomial& p) {
-    int degree = std::max(this->m_degree, p.m_degree);
-    double* coeff = new double[degree + 1];
-
-    for (int i = 0; i <= degree; i++) {
-        double temp = 0;
-        if (degree - i <= this->m_degree) {
-            temp += this->m_coefficients[i];
-        }
-
-        if (degree - i <= p.m_degree) {
-            temp -= p.m_coefficients[i];
-        }
-    }
-
-    Polynomial ans(degree, coeff);
-    ans.simplify();
-
-    delete[]coeff;
-    coeff = nullptr;
-
-    return ans;
-}
-
-Polynomial& Polynomial::operator*(const Polynomial& p) {
-    int degree = this->m_degree + p.m_degree;
-    double* coeff = new double[degree + 1];
-
-    std::vector<std::pair<double, int>> pa;
-
-    for (int i = 0; i <= this->m_degree; i++) {
-        for (int j = 0; j <= p.m_degree; j++) {
-            double c = this->m_coefficients[i] * p.m_coefficients[j];
-            int d = this->m_degree - i + p.m_degree - j;
-            std::pair<double, int> temp = std::make_pair(c, d);
-            pa.push_back(temp);
-        }
-    }
-
-    for (int i = 0; i < pa.size(); i++) {
-        std::pair<double, int> temp = pa[i];
-        coeff[temp.second] = temp.first;
-    }
-
-    Polynomial ans(degree, coeff);
-    ans.simplify();
-
-    delete[]coeff;
-    coeff = nullptr;
-    
-    return ans;
-}
-
-Polynomial& Polynomial::operator/(const Polynomial& p) {
-    int degree = this->m_degree - p.m_degree;
-    double* coeff = new double[degree + 1];
-
-    int curDeg = degree;
-    
-    Polynomial q(*this);
-
-    int i = 0;
-    while(true) {
-        if (q.m_degree < p.m_degree) {
-            break;
-        }
-        
-        coeff[i] = q.m_coefficients[0] / p.m_coefficients[i];
-
-        double* tempCoeff = new double[degree + 1 - i];
-        tempCoeff[0] = coeff[i];
-
-        for (int j = 1; j < degree + 1 - i; j++) {
-            tempCoeff[j] = 0;
-        }
-
-        Polynomial temp(degree + 1 - i, tempCoeff);
-
-        q = q - (Polynomial)p * temp;
-
-        delete[]tempCoeff;
-        tempCoeff = nullptr;
-        i++;
-    }
-
-    for (; i <= degree; i++) {
-        coeff[i] = 0;
-    }
-
-    Polynomial ans(degree, coeff);
-
-    delete[] coeff;
-    coeff = nullptr;
-
-    return ans;
-
-} 
-
-Polynomial& Polynomial::operator=(const Polynomial& p) {
-    this->m_degree = p.m_degree;
-
-    delete[]this->m_coefficients;
-
-    this->m_coefficients = new double[this->m_degree];
-
-    for(int i = 0; i <= this->m_degree; i++) {
-        this->m_coefficients[i] = p.m_coefficients[i];
-    }
 }

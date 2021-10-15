@@ -13,6 +13,7 @@ public:
     /////////////////////////////CONSTRUCTORS AND DESTRUCTOR //////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////
 
+    static int cnt;
     Polynomial(); //default constructor
 
     Polynomial(int newDegree, double* newCoefficients); //constructor with given degree and coefficients
@@ -51,11 +52,11 @@ public:
 
     Polynomial operator+(const Polynomial& p); //addition operator
 
-    Polynomial& operator-(const Polynomial& p); //substraction operator
+    Polynomial operator-(const Polynomial& p); //substraction operator
 
-    Polynomial& operator*(const Polynomial& p); //multiplication operator
+    Polynomial operator*(const Polynomial& p); //multiplication operator
 
-    Polynomial& operator/(const Polynomial& p); //division operator
+    Polynomial operator/(const Polynomial& p); //division operator
 
     Polynomial& operator=(const Polynomial& p); //assigning operator
 
@@ -75,14 +76,14 @@ public:
 
     //CALCULUS OPERATORS//
 
-    Polynomial& operator!(); //derivative operator
+    Polynomial operator!(); //derivative operator
 
-    Polynomial& operator~(); //integral operator
+    Polynomial operator~(); //integral operator
 
     //INPUT AND OUTPUT OPERATORS//
-    friend std::istream& operator>>(std::istream inDev, Polynomial& p); //input operator
+    friend std::istream& operator>>(std::istream& inDev, Polynomial& p); //input operator
 
-    friend std::ostream& operator<<(std::ostream outDev, Polynomial& p); //output operator
+    friend std::ostream& operator<<(std::ostream& outDev, Polynomial& p); //output operator
 };
 
 #endif
