@@ -161,6 +161,7 @@ Polynomial& Polynomial::operator=(const Polynomial& p) {
     return *this;
 }
 
+//COMPARISION OPERATORS//
 bool Polynomial::operator>(const Polynomial& p) {
     if (this->compare(p) == 1) {
         return true;
@@ -217,13 +218,18 @@ bool Polynomial::operator!=(const Polynomial& p) {
 }
 
 //CALCULUS OPERATORS//
+
+//Derivative operator
 Polynomial Polynomial::operator!() {
     return this->derivative();
 }
 
+//Integral operator
 Polynomial Polynomial::operator~() {
     return this->integral();
 }
+
+//INPUT AND OUTPUT OPERATORS//
 
 std::istream& operator>>(std::istream& inDev, Polynomial& p) {
     int deg;
