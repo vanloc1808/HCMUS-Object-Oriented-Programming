@@ -60,7 +60,7 @@
 											"font": "Arial;13;1",
 											"left": 445,
 											"top": 280,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "Fraction"
 										},
@@ -93,7 +93,7 @@
 									"font": "Arial;13;0",
 									"left": 440,
 									"top": 273,
-									"width": 178.68896484375,
+									"width": 381.0205078125,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8UKDXvZu2u7A="
@@ -130,7 +130,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 303,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "-_num: int",
 											"horizontalAlignment": 0
@@ -147,7 +147,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 318,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "-_den: int",
 											"horizontalAlignment": 0
@@ -156,7 +156,7 @@
 									"font": "Arial;13;0",
 									"left": 440,
 									"top": 298,
-									"width": 178.68896484375,
+									"width": 381.0205078125,
 									"height": 38
 								},
 								{
@@ -181,7 +181,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 341,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+Fraction()",
 											"horizontalAlignment": 0
@@ -198,7 +198,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 356,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+Fraction(n: int, d: int)",
 											"horizontalAlignment": 0
@@ -215,7 +215,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 371,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+Fraction(x: int)",
 											"horizontalAlignment": 0
@@ -232,7 +232,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 386,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+Fraction(fr: const Fraction&)",
 											"horizontalAlignment": 0
@@ -249,7 +249,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 401,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+getNum(): int",
 											"horizontalAlignment": 0
@@ -266,7 +266,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 416,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+getDen(): int",
 											"horizontalAlignment": 0
@@ -283,7 +283,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 431,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+setNum(n: int)",
 											"horizontalAlignment": 0
@@ -300,7 +300,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 446,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+setDen(d: int)",
 											"horizontalAlignment": 0
@@ -317,7 +317,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 461,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+simplify(): void",
 											"horizontalAlignment": 0
@@ -334,7 +334,7 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 476,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+sign(): int",
 											"horizontalAlignment": 0
@@ -351,17 +351,51 @@
 											"font": "Arial;13;0",
 											"left": 445,
 											"top": 491,
-											"width": 168.68896484375,
+											"width": 371.0205078125,
 											"height": 13,
 											"text": "+toString(): string",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF9KGql1K+rJT4=",
+											"_parent": {
+												"$ref": "AAAAAAF8UKDXvpu7XpU="
+											},
+											"model": {
+												"$ref": "AAAAAAF9KGqlv6+oUxs="
+											},
+											"font": "Arial;13;0",
+											"left": 445,
+											"top": 506,
+											"width": 371.0205078125,
+											"height": 13,
+											"text": "+operator>>(istream&, Fraction&): istream&",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF9KGq0/a+xjkg=",
+											"_parent": {
+												"$ref": "AAAAAAF8UKDXvpu7XpU="
+											},
+											"model": {
+												"$ref": "AAAAAAF9KGq09K+uQ1Y="
+											},
+											"font": "Arial;13;0",
+											"left": 445,
+											"top": 521,
+											"width": 371.0205078125,
+											"height": 13,
+											"text": "+operator<<(ostream&, const Fraction&): ostream&",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 440,
 									"top": 336,
-									"width": 178.68896484375,
-									"height": 173
+									"width": 381.0205078125,
+									"height": 203
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -398,8 +432,8 @@
 							"containerChangeable": true,
 							"left": 440,
 							"top": 273,
-							"width": 178.68896484375,
-							"height": 236,
+							"width": 381.0205078125,
+							"height": 266,
 							"nameCompartment": {
 								"$ref": "AAAAAAF8UKDXvZu1RUg="
 							},
@@ -651,6 +685,82 @@
 										"$ref": "AAAAAAF9BOXNfp6IAO0="
 									},
 									"type": "string",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF9KGqlv6+oUxs=",
+							"_parent": {
+								"$ref": "AAAAAAF8UKDKfZuwlc4="
+							},
+							"name": "operator>>",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KGrDSa+0MR4=",
+									"_parent": {
+										"$ref": "AAAAAAF9KGqlv6+oUxs="
+									},
+									"name": "istream&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KGrNN6+305s=",
+									"_parent": {
+										"$ref": "AAAAAAF9KGqlv6+oUxs="
+									},
+									"name": "Fraction&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9LZI5+BS5JpE=",
+									"_parent": {
+										"$ref": "AAAAAAF9KGqlv6+oUxs="
+									},
+									"name": "Parameter1",
+									"type": "istream&",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF9KGq09K+uQ1Y=",
+							"_parent": {
+								"$ref": "AAAAAAF8UKDKfZuwlc4="
+							},
+							"name": "operator<<",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KGrXga+6C/s=",
+									"_parent": {
+										"$ref": "AAAAAAF9KGq09K+uQ1Y="
+									},
+									"name": "ostream&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KGrf0q+9TPE=",
+									"_parent": {
+										"$ref": "AAAAAAF9KGq09K+uQ1Y="
+									},
+									"name": "const Fraction&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9LZJ9kBS+KP4=",
+									"_parent": {
+										"$ref": "AAAAAAF9KGq09K+uQ1Y="
+									},
+									"name": "Parameter1",
+									"type": "ostream&",
 									"direction": "return"
 								}
 							]

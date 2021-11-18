@@ -59,7 +59,7 @@
 											"font": "Arial;13;1",
 											"left": 329,
 											"top": 227,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "Student"
 										},
@@ -90,7 +90,7 @@
 									"font": "Arial;13;0",
 									"left": 324,
 									"top": 220,
-									"width": 279.1025390625,
+									"width": 378.875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAF8UKUWD73w41s="
@@ -127,7 +127,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 250,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "-_lastName",
 											"horizontalAlignment": 0
@@ -144,7 +144,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 265,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "-_middleName",
 											"horizontalAlignment": 0
@@ -161,7 +161,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 280,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "-_firstName",
 											"horizontalAlignment": 0
@@ -170,7 +170,7 @@
 									"font": "Arial;13;0",
 									"left": 324,
 									"top": 245,
-									"width": 279.1025390625,
+									"width": 378.875,
 									"height": 53
 								},
 								{
@@ -195,7 +195,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 303,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+Student()",
 											"horizontalAlignment": 0
@@ -212,7 +212,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 318,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+Student(l: string, m: string, s: string)",
 											"horizontalAlignment": 0
@@ -229,7 +229,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 333,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+Student(s: const Student&)",
 											"horizontalAlignment": 0
@@ -246,7 +246,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 348,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+getFullName(): string",
 											"horizontalAlignment": 0
@@ -263,7 +263,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 363,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+getLastName(): string",
 											"horizontalAlignment": 0
@@ -280,7 +280,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 378,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+getMiddleName(): string",
 											"horizontalAlignment": 0
@@ -297,7 +297,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 393,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+getFirstName(): string",
 											"horizontalAlignment": 0
@@ -314,7 +314,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 408,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+setFullName(l: string, m: string, f: string): void",
 											"horizontalAlignment": 0
@@ -331,7 +331,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 423,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+setLastName(l: string): void",
 											"horizontalAlignment": 0
@@ -348,7 +348,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 438,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+setMiddleName(m: string): void",
 											"horizontalAlignment": 0
@@ -365,7 +365,7 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 453,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+setFirstName(f: string): void",
 											"horizontalAlignment": 0
@@ -382,17 +382,51 @@
 											"font": "Arial;13;0",
 											"left": 329,
 											"top": 468,
-											"width": 269.1025390625,
+											"width": 368.875,
 											"height": 13,
 											"text": "+toString(): string",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF9KHKAniwShb0=",
+											"_parent": {
+												"$ref": "AAAAAAF8UKUWD731loE="
+											},
+											"model": {
+												"$ref": "AAAAAAF9KHKAhiwPaX8="
+											},
+											"font": "Arial;13;0",
+											"left": 329,
+											"top": 483,
+											"width": 368.875,
+											"height": 13,
+											"text": "+operator>>(istream&, Student&): istream&",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAF9KHKLQCwYADg=",
+											"_parent": {
+												"$ref": "AAAAAAF8UKUWD731loE="
+											},
+											"model": {
+												"$ref": "AAAAAAF9KHKLNywVEkA="
+											},
+											"font": "Arial;13;0",
+											"left": 329,
+											"top": 498,
+											"width": 368.875,
+											"height": 13,
+											"text": "+operator<<(ostream&, const Student&): ostream&",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 324,
 									"top": 298,
-									"width": 279.1025390625,
-									"height": 188
+									"width": 378.875,
+									"height": 218
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -427,8 +461,8 @@
 							"containerChangeable": true,
 							"left": 324,
 							"top": 220,
-							"width": 279.1025390625,
-							"height": 266,
+							"width": 378.875,
+							"height": 296,
 							"nameCompartment": {
 								"$ref": "AAAAAAF8UKUWD73vhdU="
 							},
@@ -772,6 +806,82 @@
 										"$ref": "AAAAAAF9BOqTUUXHh9U="
 									},
 									"type": "string",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF9KHKAhiwPaX8=",
+							"_parent": {
+								"$ref": "AAAAAAF8UKTyCL3pGOU="
+							},
+							"name": "operator>>",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KHKXNCwbm9s=",
+									"_parent": {
+										"$ref": "AAAAAAF9KHKAhiwPaX8="
+									},
+									"name": "istream&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KHKh5Cweg6A=",
+									"_parent": {
+										"$ref": "AAAAAAF9KHKAhiwPaX8="
+									},
+									"name": "Student&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9LZX03a3+gOs=",
+									"_parent": {
+										"$ref": "AAAAAAF9KHKAhiwPaX8="
+									},
+									"name": "Parameter1",
+									"type": "istream&",
+									"direction": "return"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAF9KHKLNywVEkA=",
+							"_parent": {
+								"$ref": "AAAAAAF8UKTyCL3pGOU="
+							},
+							"name": "operator<<",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KHKraiwh03A=",
+									"_parent": {
+										"$ref": "AAAAAAF9KHKLNywVEkA="
+									},
+									"name": "ostream&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9KHK1mCwkLSo=",
+									"_parent": {
+										"$ref": "AAAAAAF9KHKLNywVEkA="
+									},
+									"name": "const Student&",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAF9LZYi1K4DFUg=",
+									"_parent": {
+										"$ref": "AAAAAAF9KHKLNywVEkA="
+									},
+									"name": "Parameter1",
+									"type": "ostream&",
 									"direction": "return"
 								}
 							]
