@@ -1,109 +1,118 @@
-﻿#include <iostream>
-#include <fstream>
-#include <cmath>
-#include <time.h>
-using namespace std;
+﻿#define _CRT_SECURE_NO_WARNINGS
 
-template <class T>
-void HoanVi(T& a, T& b)
-{
-	T x = a;
-	a = b;
-	b = x;
-}
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <vector>
 
-//-------------------------------------------------
+const int ALLOWANCE = 500;
+const int BONUS_ALLOWANCE_PER_YEAR = 50;
 
-// Hàm phát sinh mảng dữ liệu ngẫu nhiên
-void GenerateRandomData(int* a, int n)
-{
-	srand((unsigned int)time(NULL));
+class Staff {
+protected:
+    std::string name;
+    int year;
 
-	for (int i = 0; i < n; i++)
-	{
-		a[i] = rand() % n;
-	}
-}
+public:
+    virtual void input() {
+        std::cin.ignore();
+        std::getline(std::cin, this->name);
+        std::cin >> this->year;
+    }
 
-// Hàm phát sinh mảng dữ liệu có thứ tự tăng dần
-void GenerateSortedData(int* a, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		a[i] = i;
-	}
-}
+    virtual float salary() {
+        time_t now = time(0);
+        tm* ltm = localtime(&now);
+        int currentYear = 1900 + ltm->tm_year;
+        return ALLOWANCE + BONUS_ALLOWANCE_PER_YEAR * (currentYear - this->year);
+    }
+};
 
-// Hàm phát sinh mảng dữ liệu có thứ tự ngược (giảm dần)
-void GenerateReverseData(int* a, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		a[i] = n - 1 - i;
-	}
-}
+class producingStaff : public Staff {
+private:
+    int production;
 
-// Hàm phát sinh mảng dữ liệu gần như có thứ tự
-void GenerateNearlySortedData(int* a, int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		a[i] = i;
-	}
-	srand((unsigned int)time(NULL));
-	for (int i = 0; i < 10; i++)
-	{
-		int r1 = rand() % n;
-		int r2 = rand() % n;
-		HoanVi(a[r1], a[r2]);
-	}
-}
+public:
+    void input() {
+        Staff::input();
+        std::cin >> this->production;
+    }
 
-void GenerateData(int* a, int n, int dataType)
-{
-	switch (dataType)
-	{
-	case 0:	// ngẫu nhiên
-		GenerateRandomData(a, n);
-		break;
-	case 1:	// có thứ tự
-		GenerateSortedData(a, n);
-		break;
-	case 2:	// có thứ tự ngược
-		GenerateReverseData(a, n);
-		break;
-	case 3:	// gần như có thứ tự
-		GenerateNearlySortedData(a, n);
-		break;
-	default:
-		printf("Error: unknown data type!\n");
-	}
-}
+    float salary() {
+        return Staff::salary() + 1.00 * this->production * 10;
+    }
+};
+
+class officeStaff : public Staff {
+private:
+    float salaryLevel;
+
+    int dayoff;
+
+public:
+    void input() {
+        Staff::input();
+        std::cin >> this->salaryLevel;
+        std::cin >> this->dayoff;
+    }
+
+    float salary() {
+        return Staff::salary() + 1.00 * this->salaryLevel - 1.00 * this->dayoff * 10;
+    }
+
+};
+
+class Company {
+private:
+    std::vector<Staff*> staffList;
+
+public:
+    void input() {
+        int n;
+        std::cin >> n;
+
+        for (int i = 0; i < n; i++) {
+            int x;
+            std::cin >> x;
+
+            Staff* s;
+
+            if (x == 0) {
+                s = new producingStaff();
+            }
+            else {
+                s = new officeStaff();
+            }
+
+            s->input();
+
+            this->staffList.push_back(s);
+
+        }
+    }
+
+    float totalSalary() {
+        float sum = 0;
+
+        for (int i = 0; i < this->staffList.size(); i++) {
+            sum += this->staffList[i]->salary();
+        }
+
+        return sum;
+    }
+};
 
 int main() {
-	std::ofstream* fo = new std::ofstream[4];
-	fo[0].open("randomized_data_10000.txt");
-	fo[1].open("sorted_data_10000.txt");
-	fo[2].open("reversed_sorted_data_10000.txt");
-	fo[3].open("nearly_sorted_data_10000.txt");
+    Company c;
+    std::cout << "Input a company\n";
+    std::cout << "First, input the number of staffs\n";
+    std::cout << "For each staff, enter 0 if that is producing staff, enter another number if that is office staff\n";
+    std::cout << "With producing staff, enter full name, year started to work, the number of products, each in a seperate line\n";
+    std::cout << "With office staff, enter full name, year started to work, salary level and the number of day-offs, each in a seperate line\n";
 
-	int n = 10000;
+    c.input();
 
-	int* a = new int[n];
+    std::cout << "Total salary: " << c.totalSalary() << "\n";
 
-	for (int i = 0; i < 4; i++) {
-		GenerateData(a, n, i);
-
-		for (int j = 0; j < n; j++) {
-			fo[i] << a[j] << " ";
-		}
-	}
-
-	delete[] a;
-
-	for (int i = 0; i < 4; i++) {
-		fo[i].close();
-	}
-
-	delete[] fo;
+    return 0;
 }
